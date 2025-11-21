@@ -8,43 +8,127 @@
 @import url('./reset.css');
 @import url('./base.css');
 
+/* контейнер сторінки */
+.page {
+  min-height: 100vh;
+  padding: 36px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ====== ФОРМА ====== */
+
 .form {
   display: flex;
+  align-items: center;
   justify-content: center;
   gap: 8px;
-  margin-top: 24px;
+  margin-bottom: 32px;
 }
+
+.form-input {
+  width: 371px; /* як у макеті gallery/loading */
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  line-height: 1.5;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: #808080;
+}
+
+/* hover state */
+.form-input:hover {
+  border-color: #000000;
+}
+
+/* pressed / focus state */
+.form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* кнопка Search */
+
+.form-button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 91px; /* з макету */
+  height: 40px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: var(--primary-hover);
+}
+
+/* ====== ЛОАДЕР ====== */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  margin-bottom: 32px;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* ====== ГАЛЕРЕЯ ====== */
 
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 360px);
   gap: 24px;
   justify-content: center;
-  padding-top: 40px;
+  padding: 0;
+  margin: 0;
 }
 
-.gallery-item img {
+.gallery-item {
+  background-color: #ffffff;
+  border: 1px solid #808080;
+}
+
+.gallery-link {
   display: block;
+}
+
+.gallery-image {
   width: 360px;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .info {
   display: flex;
   justify-content: space-between;
   padding: 8px 16px;
-  border: 1px solid #808080;
-  border-top: none;
-  font-size: 14px;
+  font-size: 12px;
+  line-height: 1.33;
 }
 
-.loader {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+.info p {
+  margin: 0;
+  text-align: center;
 }
 
-.is-hidden {
-  display: none;
+.info b {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
 }

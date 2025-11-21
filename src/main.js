@@ -10,7 +10,7 @@ import {
 } from './js/render-functions';
 
 const formEl = document.querySelector('.form');
-const inputEl = formEl.querySelector('input[name="search-text"]');
+const inputEl = document.querySelector('.form-input');
 
 formEl.addEventListener('submit', onFormSubmit);
 
@@ -33,7 +33,7 @@ function onFormSubmit(event) {
 
   getImagesByQuery(query)
     .then(data => {
-      if (!data.hits.length) {
+      if (!data.hits || data.hits.length === 0) {
         iziToast.error({
           title: 'Error',
           message:
@@ -45,7 +45,8 @@ function onFormSubmit(event) {
 
       createGallery(data.hits);
     })
-    .catch(() => {
+    .catch(error => {
+      console.error(error);
       iziToast.error({
         title: 'Error',
         message: 'Something went wrong. Please try again later.',
