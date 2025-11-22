@@ -86,18 +86,13 @@
    LOADER
 ===================================== */
 
-.loader-span {
-  display: none;
-}
-
+/* Лоадер */
 .loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 40px;
+  display: block;
   margin-bottom: 32px;
 }
 
+/* Ховаємо через клас */
 .is-hidden {
   display: none;
 }
