@@ -9,10 +9,10 @@ import{a as d,S as f,i as a}from"./assets/vendor-Cq7ZUixy.js";(function(){const 
           />
         </a>
         <div class="info">
-          <p><b>Likes</b>${t}</p>
-          <p><b>Views</b>${n}</p>
-          <p><b>Comments</b>${u}</p>
-          <p><b>Downloads</b>${p}</p>
+          <p><b>Likes</b> ${t}</p>
+          <p><b>Views</b> ${n}</p>
+          <p><b>Comments</b> ${u}</p>
+          <p><b>Downloads</b> ${p}</p>
         </div>
       </li>`).join("");l.insertAdjacentHTML("beforeend",r),b.refresh()}function S(){l.innerHTML=""}function E(){c.classList.remove("is-hidden")}function q(){c.classList.add("is-hidden")}const P=document.querySelector(".form"),v=document.querySelector(".form-input");P.addEventListener("submit",w);function w(i){i.preventDefault();const r=v.value.trim();if(!r){a.warning({title:"Warning",message:"Please enter a search query!",position:"topRight"});return}S(),E(),h(r).then(o=>{if(!o.hits||o.hits.length===0){a.error({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight"});return}L(o.hits)}).catch(o=>{console.error(o),a.error({title:"Error",message:"Something went wrong. Please try again later.",position:"topRight"})}).finally(()=>{q()})}
 //# sourceMappingURL=index.js.map
