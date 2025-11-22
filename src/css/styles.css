@@ -90,9 +90,12 @@
 .loader {
   display: block;
   margin-bottom: 32px;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+  color: #2e2f42;
 }
 
-/* Ховаємо через клас */
 .is-hidden {
   display: none;
 }
