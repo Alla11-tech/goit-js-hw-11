@@ -86,6 +86,10 @@
    LOADER
 ===================================== */
 
+.loader-span {
+  display: none;
+}
+
 .loader {
   display: flex;
   justify-content: center;
